@@ -1,0 +1,11 @@
+•	CP will modify and version an existing web service for Digital Platform to read/write customer interests to/from CP.
+•	CP will be expecting only the interests that are selected or deselected by a customer. 
+•	When capturing interests for a party, CP requires the interest hierarchy. See details here
+•	CP requires interest codes and category codes when capturing interests. The valid values for these codes and meanings are outlined here
+•	CP will update the existing data model for interests, to include customer interests from fid.com
+o	CP will create an entry in the INTEREST_SRC_XREF table 
+o	CP will use “CIT” to indicate the source code as Customer Interests Tool. “LGT” is the existing source code used to Prospect interests from Lead Gen Tool
+•	When reading/writing customer interests to/from CP, the interest source of “CIT” is required. 
+•	Interests can have a status of “A” or “I” indicating active or inactive, based on a customer’s selection on the UI.
+•	For any changes to the customer interest, the PARTY_INTEREST.LAST_UPDATED_DT will be updated to reflect that this interest status has changed.
+•	When a customer has not selected any interests, CP will only be sent a Flag “completedInterests” set to “A”, to indicate the customer has not selected any interests when using the CIT tool.
